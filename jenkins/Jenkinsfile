@@ -1,0 +1,38 @@
+pipeline {
+    agent any
+
+    environment {
+        NETWORK_NAME = 'general-network'
+    }
+
+    stages {
+        stage('Prepare Network') {
+            steps {
+                echo "Verifing network"
+                sh "docker network create ${NETWORK_NAME} || true"
+            }
+        }
+
+        stage('Run Keycloak Service') {
+            steps {
+                withCredentials([
+                    usernamePassword(
+                        credentialsId: 'keycloak-credentials', 
+                        usernameVariable: 'KC_USER',
+                        passwordVariable: 'KC_PASSWORD'
+                    ),
+		    usernamePassword(
+                        credentialsId: 'postgres-credentials', 
+                        usernameVariable: 'POSTGRES_USER',
+                        passwordVariable: 'POSTGRES_PASSWORD'
+                    )
+
+                ]) {
+                    echo 'Starting the Rabbit-mq container and the internal network'
+                    sh 'docker compose up -d'
+                }
+            }
+        }
+    }
+    
+}
