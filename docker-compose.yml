@@ -1,7 +1,7 @@
 version: '3'
 services:
   keycloak-biopatternsg:
-    image: quay.io/keycloak/keycloak:26.5.3
+    image: quay.io/keycloak/keycloak:20.0.5
     container_name: keycloak-biopatternsg
     command: start-dev
     environment:
