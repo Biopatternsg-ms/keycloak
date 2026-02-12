@@ -1,8 +1,8 @@
 version: '3'
 services:
-  keycloak-kairos:
+  keycloak-biopatternsg:
     image: keycloak/keycloak:latest
-    container_name: keycloak-biopatterngs
+    container_name: keycloak-biopatternsg
     command: start-dev
     environment:
       # --- Configuración de Base de Datos ---
@@ -10,7 +10,7 @@ services:
 
       # 1. Apuntamos a la base de datos 'kairos'
       # 2. Agregamos '?currentSchema=keycloak' para forzar al driver JDBC a usar ese esquema
-      KC_DB_URL: jdbc:postgresql://biopatterngs-postgres:5432/biopatterngs?currentSchema=keycloak
+      KC_DB_URL: jdbc:postgresql://biopatternsg-postgres:5432/biopatternsg?currentSchema=keycloak
 
       # Explicitamos el schema para Keycloak
       KC_DB_SCHEMA: keycloak
