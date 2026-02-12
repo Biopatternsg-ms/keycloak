@@ -17,12 +17,12 @@ pipeline {
             steps {
                 withCredentials([
                     usernamePassword(
-                        credentialsId: 'keycloak-credentials', 
+                        credentialsId: 'keycloak_credentials', 
                         usernameVariable: 'KC_USER',
                         passwordVariable: 'KC_PASSWORD'
                     ),
 		    usernamePassword(
-                        credentialsId: 'postgres-credentials', 
+                        credentialsId: 'postgres_credentials', 
                         usernameVariable: 'POSTGRES_USER',
                         passwordVariable: 'POSTGRES_PASSWORD'
                     )
