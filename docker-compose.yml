@@ -21,6 +21,8 @@ services:
 
       KC_HOSTNAME_STRICT: "false"
       KC_HOSTNAME_STRICT_BACKCHANNEL: "false"
+      KC_HOSTNAME: "bioai.redclara.net"
+      KC_PROXY: "edge"
       
       # --- Configuración de Seguridad y Admin ---
       KC_HTTP_ENABLED: "true" 
