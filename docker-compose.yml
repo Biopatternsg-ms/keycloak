@@ -21,6 +21,7 @@ services:
 
       KC_HOSTNAME_STRICT: "false"
       KC_HOSTNAME_STRICT_BACKCHANNEL: "false"
+      KC_HOSTNAME_ADMIN_URL: "http://localhost:8005"
       KC_HOSTNAME: "bioai.redclara.net"
       KC_PROXY: "edge"
       
