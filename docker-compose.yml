@@ -1,20 +1,6 @@
 version: '3.8'
 
 services:
-  # Base de datos PostgreSQL para Keycloak
-  biopatternsg-postgres:
-    image: postgres:15
-    container_name: biopatternsg-postgres
-    restart: always
-    environment:
-      POSTGRES_DB: biopatternsg
-      POSTGRES_USER: ${POSTGRES_USER:-admin}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-biopatternsg}
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    networks:
-      - general-network
-
   # Keycloak 26 (Sin multitenancy)
   keycloak-biopatternsg:
     image: quay.io/keycloak/keycloak:26.5.6
