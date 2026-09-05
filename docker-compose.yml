@@ -6,8 +6,6 @@ services:
     image: quay.io/keycloak/keycloak:26.5.6
     container_name: keycloak-biopatternsg
     command: start-dev --spi-theme-static-max-age=-1 --spi-theme-cache-themes=false --spi-theme-cache-templates=false
-    depends_on:
-      - biopatternsg-postgres
     environment:
       # --- Base de Datos (Esquema simple public) ---
       KC_DB: postgres
