@@ -17,7 +17,7 @@ services:
 
       # --- Proxy y Acceso por IP ---
       KC_PROXY_HEADERS: xforwarded
-      KC_HOSTNAME: "https://biopatternsg.duckdns.org"
+      KC_HOSTNAME: "https://${PUBLIC_DOMAIN}"
       KC_HOSTNAME_STRICT: "false"
       KC_HOSTNAME_STRICT_BACKCHANNEL: "false"
       KC_HTTP_ENABLED: "true"
