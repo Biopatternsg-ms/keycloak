@@ -31,8 +31,6 @@ services:
 
     ports:
       - "8005:8080"
-    volumes:
-      - ./themes/biopatternsg:/opt/keycloak/themes/biopatternsg:ro
     networks:
       - general-network
     restart: always
