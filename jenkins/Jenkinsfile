@@ -30,6 +30,9 @@ pipeline {
                 ]) {
                     echo 'Starting the Rabbit-mq container and the internal network'
                     sh 'docker compose build --pull --no-cache && docker compose up -d'
+                    sh 'docker cp ./themes/biopatternsg keycloak-biopatternsg:/opt/keycloak/themes/'
+                    sh 'docker exec -u root keycloak-biopatternsg chown -R 1000:0 /opt/keycloak/themes/biopatternsg'
+                    sh 'docker exec -u root keycloak-biopatternsg chmod -R 755 /opt/keycloak/themes/biopatternsg'
                 }
             }
         }
